@@ -13,3 +13,5 @@ then
 fi
 
 alias c='clear'
+
+alias aliases_remote_update='wget -q -O - "$@" https://alias.sh/user/8953/alias >> ~/.dotfiles/zsh/aliases_remote.zsh'
