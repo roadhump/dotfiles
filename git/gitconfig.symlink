@@ -1,0 +1,18 @@
+[user]
+    name = Aliaksei Shytkin
+    email = e79eas@gmail.com
+[core]
+    excludesfile = $HOME/.gitignore
+    editor = nano
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+    default = matching
+[alias]
+    tags = tag -l
+    branches = branch -l
+    remotes = remote -v

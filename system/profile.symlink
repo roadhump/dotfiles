@@ -1,0 +1,8 @@
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+
+DOTFILES=$HOME/.dotfiles
+source $DOTFILES/bin/env.zsh
+source $DOTFILES/npm/env.zsh
+
+source $DOTFILES/system/env.zsh
+source $DOTFILES/ruby/env.zsh
