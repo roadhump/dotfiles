@@ -2,7 +2,7 @@
     name = Aliaksei Shytkin
     email = e79eas@gmail.com
 [core]
-    excludesfile = $HOME/.gitignore
+	excludesfile = /Users/roadhump/.gitignore
     editor = nano
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
