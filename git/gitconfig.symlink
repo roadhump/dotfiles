@@ -1,14 +1,14 @@
 [user]
-    name = Aliaksei Shytkin
-    email = e79eas@gmail.com
+	name = Aliaksei Shytkin
+	email = e79eas@gmail.com
 [core]
 	excludesfile = /Users/roadhump/.gitignore
     editor = nano
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
 [push]
     default = matching
@@ -16,3 +16,4 @@
     tags = tag -l
     branches = branch -l
     remotes = remote -v
+    unstash = stash pop
