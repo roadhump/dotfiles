@@ -1,3 +1,0 @@
-# set -e
-
-find . -iname "*$1*" -ls
