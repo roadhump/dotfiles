@@ -4,14 +4,14 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 alias c='clear'
 
-alias aliases_remote_update='wget -q -O - "$@" https://alias.sh/user/8953/alias >> ~/.dotfiles/zsh/aliases_remote.zsh'
+alias aliases_remote_update='wget -q -O - "$@" https://alias.sh/user/8953/alias > ~/.dotfiles/zsh/aliases_remote.zsh'
 
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 alias sourcetree='open -a SourceTree'
 alias chrome="open -a google\ chrome"
 alias finder='open -a Finder'
-alias gh="open 'http://github.com/roadhump'"
+alias gitme="open 'http://github.com/roadhump'"
 
 function findfile() {
     find . -iname "*$1*" -ls

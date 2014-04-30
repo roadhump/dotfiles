@@ -17,3 +17,6 @@
     branches = branch -l
     remotes = remote -v
     unstash = stash pop
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
