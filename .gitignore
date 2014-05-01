@@ -12,12 +12,3 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-
-### /Users/roadhump/.gitignore-boilerplates/Global/SublimeText.gitignore
-
-# SublimeText project files
-*.sublime-workspace
-*.sublime-project
-
-
