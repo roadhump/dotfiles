@@ -12,6 +12,7 @@ alias sourcetree='open -a SourceTree'
 alias chrome="open -a google\ chrome"
 alias finder='open -a Finder'
 alias gitme="open 'http://github.com/roadhump'"
+alias t="todo.sh"
 
 function findfile() {
     find . -iname "*$1*" -ls
