@@ -43,7 +43,8 @@ ZSH_THEME="mine"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git github git-extras jump node npm sublime capistrano)
+plugins=(brew git github git-extras jump node npm sublime capistrano last-working-dir iwhois gitignore
+    extract common-aliases bwana)
 
 # source $HOME/.zprofile
 source $ZSH/oh-my-zsh.sh
@@ -52,6 +53,3 @@ source $ZSH_CUSTOM/aliases.zsh
 source $ZSH_CUSTOM/aliases_remote.zsh
 
 export CDPATH=.:~:~/Projects
-
-
-

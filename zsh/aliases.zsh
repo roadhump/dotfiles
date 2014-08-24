@@ -1,4 +1,16 @@
-alias reload!='source ~/.zprofile && source ~/.zshrc'
+function reload!()
+{
+  autoload -U compinit zrecompile
+  compinit -d "$ZSH/cache/zcomp-$HOST"
+
+  for f in ~/.zshrc "$ZSH/cache/zcomp-$HOST"; do
+    zrecompile -p $f && command rm -f $f.zwc.old
+  done
+
+  source ~/.zprofile
+  source ~/.zshrc
+}
+
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
@@ -34,3 +46,13 @@ function subln() {
                 subl -n "$@"
         fi
 }
+
+function sourcetreen() {
+        if [ $# -eq 0 ]; then
+                sourcetree .
+        else
+                sourcetree "$@"
+        fi
+}
+
+alias st=sourcetreen
