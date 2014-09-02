@@ -18,8 +18,6 @@ alias c='clear'
 
 alias aliases_remote_update='wget -q -O - "$@" https://alias.sh/user/8953/alias > ~/.dotfiles/zsh/aliases_remote.zsh'
 
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
 alias sourcetree='open -a SourceTree'
 alias chrome="open -a google\ chrome"
 alias finder='open -a Finder'
