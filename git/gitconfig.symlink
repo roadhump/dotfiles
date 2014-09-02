@@ -18,6 +18,7 @@
     remotes = remote -v
     unstash = stash pop
     clr = checkout -- .
+    ls = status
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
