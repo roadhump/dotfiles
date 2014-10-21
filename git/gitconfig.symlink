@@ -5,7 +5,7 @@
 	excludesfile = /Users/roadhump/.gitignore
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
@@ -18,6 +18,8 @@
     unstash = stash pop
     clr = checkout -- .
     ls = status
+    st = status
+    amend = commit --amend
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
