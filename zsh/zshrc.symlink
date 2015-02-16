@@ -53,3 +53,5 @@ source $ZSH_CUSTOM/aliases.zsh
 source $ZSH_CUSTOM/aliases_remote.zsh
 
 export CDPATH=.:~:~/Projects
+
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

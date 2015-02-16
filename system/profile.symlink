@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
 
 DOTFILES=$HOME/.dotfiles
 source $DOTFILES/bin/env.zsh
@@ -6,6 +6,6 @@ source $DOTFILES/npm/env.zsh
 
 source $DOTFILES/system/env.zsh
 source $DOTFILES/ruby/env.zsh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ulimit -n 2560
