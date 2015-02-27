@@ -4,6 +4,9 @@ DOTFILES=$HOME/.dotfiles
 
 ZSH_CUSTOM=$DOTFILES/zsh
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -44,7 +47,7 @@ ZSH_THEME="mine"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew git github git-extras jump node npm sublime capistrano last-working-dir iwhois gitignore
-    extract common-aliases bwana)
+    extract common-aliases bwana catimg osx z zsh-syntax-highlighting)
 
 # source $HOME/.zprofile
 source $ZSH/oh-my-zsh.sh
