@@ -1,16 +1,4 @@
-function reload!()
-{
-  autoload -U compinit zrecompile
-  compinit -d "$ZSH/cache/zcomp-$HOST"
-
-  for f in ~/.zshrc "$ZSH/cache/zcomp-$HOST"; do
-    zrecompile -p $f && command rm -f $f.zwc.old
-  done
-
-  source ~/.zprofile
-  source ~/.zshrc
-}
-
+alias reload!=src
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
@@ -54,3 +42,4 @@ function sourcetreen() {
 }
 
 alias st=sourcetreen
+alias fuck='eval $(thefuck $(fc -ln -1))'

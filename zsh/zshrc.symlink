@@ -46,8 +46,21 @@ ZSH_THEME="mine"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git github git-extras jump node npm sublime capistrano last-working-dir iwhois gitignore
-    extract common-aliases bwana catimg osx z zsh-syntax-highlighting)
+plugins=(
+    brew bwana
+    catimg capistrano common-aliases
+    extract
+    git gitignore github git-extras git-remote-branch
+    heroku
+    iwhois
+    jump
+    last-working-dir
+    node npm nvm
+    osx
+    rvm
+    sublime sudo
+    web-search
+    z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
