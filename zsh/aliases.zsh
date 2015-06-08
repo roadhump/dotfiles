@@ -4,8 +4,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 alias c='clear'
 
-alias aliases_remote_update='wget -q -O - "$@" https://alias.sh/user/8953/alias > ~/.dotfiles/zsh/aliases_remote.zsh'
-
 alias sourcetree='open -a SourceTree'
 alias chrome="open -a google\ chrome"
 alias finder='open -a Finder'
@@ -43,3 +41,15 @@ function sourcetreen() {
 
 alias st=sourcetreen
 alias fuck='eval $(thefuck $(fc -ln -1))'
+
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+
+alias ifconfig-ext='curl ifconfig.me'
+
+alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
+
+function mcd() {
+    mkdir -p "$1" && cd "$1";
+}
+
+alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'

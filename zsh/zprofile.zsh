@@ -1,8 +1,5 @@
-export PATH=~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-
 DOTFILES=$HOME/.dotfiles
-source $DOTFILES/bin/env.zsh
-source $DOTFILES/system/env.zsh
+export PATH=$DOTFILES/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
 ulimit -n 2560
 
@@ -15,3 +12,5 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 export NODE_REPL_HISTORY_FILE="$HOME/.iojs_repl_history"
+
+export EDITOR='subl'
