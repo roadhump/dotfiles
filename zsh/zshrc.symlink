@@ -50,7 +50,7 @@ plugins=(
     brew bwana
     catimg capistrano common-aliases
     extract
-    git gitignore github git-extras git-remote-branch
+    git git-extras gitignore
     heroku
     iwhois
     jump
