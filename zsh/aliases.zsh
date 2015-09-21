@@ -53,3 +53,5 @@ function mcd() {
 }
 
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
+
+alias j='jump'
