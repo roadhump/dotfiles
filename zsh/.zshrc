@@ -65,5 +65,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_CUSTOM/aliases.zsh
+source $ZSH_CUSTOM/secrets.zsh
 
 export CDPATH=.:~:~/Projects
