@@ -68,3 +68,8 @@ source $ZSH_CUSTOM/aliases.zsh
 source $ZSH_CUSTOM/secrets.zsh
 
 export CDPATH=.:~:~/Projects
+
+# added by travis gem
+[ -f /Users/roadhump/.travis/travis.sh ] && source /Users/roadhump/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

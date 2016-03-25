@@ -55,3 +55,10 @@ function mcd() {
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 
 alias j='jump'
+
+alias dm-start='eval "$(docker-machine env default)" && docker-machine start default'
+alias dm-stop="docker-machine stop default"
+alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+docker-build-push() { docker build -t "$1" . && docker tag "$1" "$2" && docker push "$2";}
+docker-stop-all() { docker stop $(docker ps -a -q); }
+docker-remove-all() { docker rm $(docker ps -a -q); }
