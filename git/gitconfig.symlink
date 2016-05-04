@@ -3,6 +3,8 @@
 	email = e79eas@gmail.com
 [core]
 	excludesfile = /Users/roadhump/.gitignore
+    ignorecase = false
+	editor = subl -n -w
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
 	path =
