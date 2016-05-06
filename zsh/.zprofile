@@ -12,6 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source "$DOTFILES/pyenv/pyenv.zsh"
 
 export NODE_REPL_HISTORY_FILE="$HOME/.iojs_repl_history"
 

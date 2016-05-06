@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 DOTFILES=$HOME/.dotfiles
 
 ZSH_CUSTOM=$DOTFILES/zsh
@@ -47,22 +47,23 @@ ZSH_THEME="mine"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-    brew bwana
-    catimg capistrano common-aliases
+    bgnotify brew bwana
+    catimg capistrano colorize-man-pages common-aliases command-not-found
+    docker docker-compose
     extract
-    git git-extras
-    git-prompt
-    gitignore
+    git git-extras git-prompt gitignore
     heroku
     iwhois
     jump
     last-working-dir
-    node npm nvm
+    nvm
     osx
+    pj
     rvm
-    sublime sudo
+    sublime sudo systemadmin
+    thefuck
     web-search
-    z zsh_reload)
+    z zsh-navigation-tools zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 

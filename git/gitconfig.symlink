@@ -21,7 +21,7 @@
     clr = checkout -- .
     ls = status
     st = status
-    amend = commit --amend
+    amend = commit --amend --no-edit
     head = push origin HEAD
 [filter "lfs"]
 	clean = git-lfs clean %f

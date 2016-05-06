@@ -40,7 +40,6 @@ function sourcetreen() {
 }
 
 alias st=sourcetreen
-alias fuck='eval $(thefuck $(fc -ln -1))'
 
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
@@ -55,13 +54,6 @@ function mcd() {
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 
 alias j='jump'
-
-alias dm-start='docker-machine start default && eval "$(docker-machine env default)"'
-alias dm-stop="docker-machine stop default"
-alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-docker-build-push() { docker build -t "$1" . && docker tag "$1" "$2" && docker push "$2";}
-docker-stop-all() { docker stop $(docker ps -a -q); }
-docker-remove-all() { docker rm $(docker ps -a -q); }
 
 git_super_status() {
     precmd_update_git_vars
