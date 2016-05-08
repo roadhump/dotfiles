@@ -16,27 +16,27 @@ function findfile() {
 
 # Create a data URL from a file
 function dataurl() {
-        local mimeType=$(file -b --mime-type "$1")
-        if [[ $mimeType == text/* ]]; then
-                mimeType="${mimeType};charset=utf-8"
-        fi
-        echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+    local mimeType=$(file -b --mime-type "$1")
+    if [[ $mimeType == text/* ]]; then
+            mimeType="${mimeType};charset=utf-8"
+    fi
+    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
 function subln() {
-        if [ $# -eq 0 ]; then
-                subl -n .
-        else
-                subl -n "$@"
-        fi
+    if [ $# -eq 0 ]; then
+        subl -n .
+    else
+        subl -n "$@"
+    fi
 }
 
 function sourcetreen() {
-        if [ $# -eq 0 ]; then
-                sourcetree .
-        else
-                sourcetree "$@"
-        fi
+    if [ $# -eq 0 ]; then
+        sourcetree .
+    else
+        sourcetree "$@"
+    fi
 }
 
 alias st=sourcetreen
@@ -58,30 +58,53 @@ alias j='jump'
 git_super_status() {
     precmd_update_git_vars
     if [ -n "$__CURRENT_GIT_STATUS" ]; then
-      STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
-      if [ "$GIT_BEHIND" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND$GIT_BEHIND %{${reset_color}%}"
-      fi
-      if [ "$GIT_AHEAD" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD %{${reset_color}%}"
-      fi
-      STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
-      if [ "$GIT_STAGED" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
-      fi
-      if [ "$GIT_CONFLICTS" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CONFLICTS$GIT_CONFLICTS%{${reset_color}%}"
-      fi
-      if [ "$GIT_CHANGED" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%}"
-      fi
-      if [ "$GIT_UNTRACKED" -ne "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED$GIT_UNTRACKED%{${reset_color}%}"
-      fi
-      if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
-          STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
-      fi
-      STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-      echo "$STATUS"
+        STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
+        if [ "$GIT_BEHIND" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND$GIT_BEHIND %{${reset_color}%}"
+        fi
+        if [ "$GIT_AHEAD" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD %{${reset_color}%}"
+        fi
+        STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
+        if [ "$GIT_STAGED" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
+        fi
+        if [ "$GIT_CONFLICTS" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CONFLICTS$GIT_CONFLICTS%{${reset_color}%}"
+        fi
+        if [ "$GIT_CHANGED" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%}"
+        fi
+        if [ "$GIT_UNTRACKED" -ne "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED$GIT_UNTRACKED%{${reset_color}%}"
+        fi
+        if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
+            STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
+        fi
+        STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+        echo "$STATUS"
+    fi
+}
+
+function wh() {
+    local input="$1";
+    local res="$(type $input)"
+
+    if [[ $res == *"shell function"* ]]; then
+        echo "$res"
+        echo "$(which $input)"
+    elif [[ $res == *" is an alias"* ]]; then
+        echo "$res"
+    elif [[ $res == *" is "* ]]; then
+
+        local fullpath="$(which $input)"
+
+        if [[ -L $fullpath ]]; then
+            echo "$input is a file from $fullpath >> $(greadlink -f $fullpath)"
+        else
+            echo "$input is a file from $fullpath"
+        fi
+    else
+        echo $res
     fi
 }
