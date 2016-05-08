@@ -88,23 +88,11 @@ git_super_status() {
 
 function wh() {
     local input="$1";
-    local res="$(type $input)"
+    local inputType="$(type -w $input)"
 
-    if [[ $res == *"shell function"* ]]; then
-        echo "$res"
-        echo "$(which $input)"
-    elif [[ $res == *" is an alias"* ]]; then
-        echo "$res"
-    elif [[ $res == *" is "* ]]; then
-
-        local fullpath="$(which $input)"
-
-        if [[ -L $fullpath ]]; then
-            echo "$input is a file from $fullpath >> $(greadlink -f $fullpath)"
-        else
-            echo "$input is a file from $fullpath"
-        fi
+    if [[ $inputType == *"function" ]]; then
+        type -s $input && type -f $input
     else
-        echo $res
+        type -s $input
     fi
 }
