@@ -35,6 +35,7 @@
     head = push origin HEAD -u
     track = checkout -t
     i = !git init && git config --unset core.ignorecase
+    repo = !gh repo open
 [github]
 	user = roadhump
 	token = 82c70f4a568dee94d33f959a2bbab140e082d6e7
