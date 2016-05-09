@@ -8,9 +8,13 @@
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
 	path =
-[mergetool "sourcetree"]
+[mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
+[merge]
+    tool = p4merge
+[diff]
+    tool = p4merge
 [push]
     default = matching
 [alias]
@@ -27,10 +31,3 @@
 [github]
 	user = roadhump
 	token = 82c70f4a568dee94d33f959a2bbab140e082d6e7
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
