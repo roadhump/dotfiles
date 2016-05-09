@@ -24,6 +24,9 @@
     amend = commit --amend --no-edit
     head = push origin HEAD -u
     track = checkout -t
+[github]
+	user = roadhump
+	token = 82c70f4a568dee94d33f959a2bbab140e082d6e7
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
