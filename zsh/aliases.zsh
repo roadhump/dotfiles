@@ -96,3 +96,6 @@ function wh() {
         type -s $input
     fi
 }
+
+alias rf='rm -rf'
+alias r!='reload!'
