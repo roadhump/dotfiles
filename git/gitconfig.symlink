@@ -1,16 +1,16 @@
 [user]
-	name = Aliaksei Shytkin
-	email = e79eas@gmail.com
+    name = Aliaksei Shytkin
+    email = e79eas@gmail.com
 [core]
-	excludesfile = /Users/roadhump/.gitignore
+    excludesfile = /Users/roadhump/.gitignore
     ignorecase = false
-	editor = subl -n -w
+    editor = subl -n -w
 [difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	prompt = false
+    cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+    prompt = false
 [mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+    trustExitCode = true
 [merge]
     tool = p4merge
 [diff]
@@ -30,4 +30,4 @@
     track = checkout -t
     i = !git init && git config --unset core.ignorecase
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
