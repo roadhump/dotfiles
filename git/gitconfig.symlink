@@ -11,12 +11,6 @@
 [mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
-[difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	prompt = false
-[mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
 [merge]
     tool = p4merge
 [diff]
@@ -36,6 +30,3 @@
     track = checkout -t
     i = !git init && git config --unset core.ignorecase
     repo = !gh repo open
-[github]
-	user = roadhump
-	token = 82c70f4a568dee94d33f959a2bbab140e082d6e7

@@ -98,4 +98,4 @@ function wh() {
 }
 
 alias rf='rm -rf'
-alias r!='reload!'
+alias r!='src'
