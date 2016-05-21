@@ -37,7 +37,7 @@ export CDPATH=.:~:~/Projects
 
 ulimit -n 2560
 
-export EDITOR='subl -w'
+export EDITOR='subl'
 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode
 export LESS_TERMCAP_md=$(printf '\e[01;38;5;75m') # enter double-bright mode
