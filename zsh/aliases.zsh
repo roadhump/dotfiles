@@ -10,6 +10,8 @@ alias finder='open -a Finder'
 alias gitme="open 'http://github.com/roadhump'"
 alias t="todo.sh -d ~/.dotfiles/todo-txt/todo.cfg"
 
+alias vscode="'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
+
 function findfile() {
     find . -iname "*$1*" -ls
 }
@@ -99,3 +101,6 @@ function wh() {
 
 alias rf='rm -rf'
 alias r!='src'
+
+alias dotenv=source_env
+alias de=source_env

@@ -19,4 +19,3 @@ PROMPT='%{$fg_bold[cyan]%}${PWD/#$HOME/~} %{$reset_color%}$(git_super_status)%{$
 # PROMPT='%{$fg_bold[cyan]%}${PWD/#$HOME/~} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}'
 
 RPROMPT=''
-

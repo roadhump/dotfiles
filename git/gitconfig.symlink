@@ -16,7 +16,7 @@
 [diff]
     tool = p4merge
 [push]
-    default = matching
+    default = upstream
 [alias]
     tags = tag -l
     branches = branch -l

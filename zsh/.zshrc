@@ -10,8 +10,8 @@ ZSH_THEME="mine"
 
 plugins=(
     bgnotify brew bwana
-    catimg capistrano common-aliases command-not-found
-    docker docker-compose
+    capistrano catimg common-aliases command-not-found
+    docker docker-compose dotenv
     extract
     git git-extras git-prompt gitignore
     heroku
@@ -48,3 +48,11 @@ export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GOPATH="$HOME/.go"
