@@ -29,5 +29,6 @@
     head = push origin HEAD -u
     track = checkout -t
     i = !git init && git config --unset core.ignorecase
+    merge-here = git merge --no-ff --strategy recursive --strategy-option theirs
 [credential]
     helper = osxkeychain

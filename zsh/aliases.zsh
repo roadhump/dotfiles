@@ -104,3 +104,6 @@ alias r!='src'
 
 alias dotenv=source_env
 alias de=source_env
+alias prettyjson='python -m json.tool'
+
+alias lh='ls -lAth'

@@ -15,7 +15,6 @@ plugins=(
     extract
     git git-extras git-prompt gitignore
     heroku
-    iwhois
     jump
     last-working-dir
     nvm
