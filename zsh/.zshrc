@@ -9,6 +9,7 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_THEME="mine"
 
 plugins=(
+    awsume
     bgnotify brew bwana
     capistrano catimg common-aliases command-not-found
     docker docker-compose dotenv

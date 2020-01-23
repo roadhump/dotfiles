@@ -1,0 +1,4 @@
+#compdef awsume
+#autoload
+
+_arguments -C "1: :($(awsume-autocomplete))"

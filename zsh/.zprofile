@@ -1,6 +1,6 @@
 DOTFILES=$HOME/.dotfiles
 
-export PATH=$DOTFILES/bin:$HOME/.go/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:./node_modules/.bin
+export PATH=$HOME/.cargo/bin:$DOTFILES/bin:$HOME/.go/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:./node_modules/.bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -17,3 +17,7 @@ export NODEJS_ORG_MIRROR=https://nodejs.org/dist
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 source "$DOTFILES/pyenv/pyenv.zsh"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+source $HOME/.cargo/env
