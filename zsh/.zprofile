@@ -21,3 +21,5 @@ source "$DOTFILES/pyenv/pyenv.zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 source $HOME/.cargo/env
+
+source $HOME/.zsh_profile
