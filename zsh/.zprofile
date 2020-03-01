@@ -1,6 +1,9 @@
 DOTFILES=$HOME/.dotfiles
 
-export PATH=$HOME/.cargo/bin:$DOTFILES/bin:$HOME/.go/bin:~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:./node_modules/.bin
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.bin:$DOTFILES/bin:$PATH"
+export PATH="$PWD/node_modules/.bin:$PATH"
+export PATH="$HOME/.go/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -19,7 +22,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 source "$DOTFILES/pyenv/pyenv.zsh"
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
 source $HOME/.cargo/env
 
-source $HOME/.zsh_profile
+export PATH="$HOME/opt/anaconda3/bin:$PATH"
