@@ -56,3 +56,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GOPATH="$HOME/.go"
+
+export ZSH_DOTENV_PROMPT=false
