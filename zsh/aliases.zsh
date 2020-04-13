@@ -107,6 +107,6 @@ alias de=source_env
 alias prettyjson='python -m json.tool'
 
 alias lh='ls -lAth'
+alias lah='ls -lAth'
 
-alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
-alias awsume=". awsume"
+alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'alias awsume=". awsume"
