@@ -31,13 +31,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_CUSTOM/aliases.zsh
-source $ZSH_CUSTOM/secrets.zsh
 
 export CDPATH=.:~:~/Projects
 
 ulimit -n 2560
 
-export EDITOR='subl'
+export EDITOR='vscode'
 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode
 export LESS_TERMCAP_md=$(printf '\e[01;38;5;75m') # enter double-bright mode
@@ -51,9 +50,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export GOPATH="$HOME/.go"
-source "$(npm root -g)/@mapbox/mbxcli/bin/mapbox.sh"
+
+source $ZSH_CUSTOM/local.zshrc
