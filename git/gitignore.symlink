@@ -47,4 +47,6 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/visualstudiocode
 
+### Custom ###
 .env
+# End of Custom

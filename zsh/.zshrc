@@ -1,12 +1,12 @@
 export ZSH=$HOME/.oh-my-zsh
-DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 
-ZSH_CUSTOM=$DOTFILES/zsh
+export ZSH_CUSTOM=$DOTFILES/zsh
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+export ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
-ZSH_THEME="mine"
+export ZSH_THEME="mine"
 
 plugins=(
     awsume
@@ -16,12 +16,12 @@ plugins=(
     extract
     git git-extras git-prompt gitignore
     heroku
+    iterm2
     jump
     last-working-dir
     nvm
     osx
     pj
-    rvm
     sublime sudo systemadmin
     thefuck
     web-search
@@ -48,24 +48,22 @@ export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 export GOPATH="$HOME/.go"
 
 source $ZSH_CUSTOM/local.zshrc
+
 export ZSH_DOTENV_PROMPT=false
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/roadhump/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/roadhump/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/roadhump/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/roadhump/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/Users/roadhump/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/roadhump/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/roadhump/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/roadhump/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
-
