@@ -11,21 +11,20 @@ export ZSH_THEME="mine"
 plugins=(
     awsume
     bgnotify brew bwana
-    capistrano catimg common-aliases command-not-found
+    catimg common-aliases command-not-found
     docker docker-compose dotenv
     extract
     git git-extras git-prompt gitignore
-    heroku
+    httpie
     iterm2
     jump
     last-working-dir
     nvm
     osx
-    pj
     sublime sudo systemadmin
     thefuck
     web-search
-    z zsh-navigation-tools zsh_reload
+    zsh-navigation-tools zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh
