@@ -30,5 +30,7 @@
     track = checkout -t
     i = !git init && git config --unset core.ignorecase
     merge-here = merge --no-ff --strategy recursive --strategy-option theirs
+    up = pull --rebase --autostash
+    bump = commit -m 'bump' --allow-empty
 [credential]
     helper = osxkeychain

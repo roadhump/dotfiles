@@ -85,11 +85,10 @@ alias de=source_env
 alias lh='ls -lAth'
 alias lah='ls -lAth'
 
-alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'alias awsume=". awsume"
+alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
 
 alias venv='source .venv/bin/activate'
 
-alias .='echo $PWD'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ~='cd ~'
+function aws-s3-total() {
+    aws s3 ls --summarize --human-readable --recursive $1 | grep 'Total'
+}

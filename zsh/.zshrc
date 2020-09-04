@@ -9,7 +9,7 @@ export ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 export ZSH_THEME="mine"
 
 plugins=(
-    awsume
+    aws awsume
     bgnotify brew bwana
     catimg common-aliases command-not-found
     docker docker-compose dotenv
@@ -66,3 +66,4 @@ export ZSH_DOTENV_PROMPT=false
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+source "$(npm root -g)/@mapbox/mbxcli/bin/mapbox.sh"
