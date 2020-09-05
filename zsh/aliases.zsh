@@ -92,3 +92,5 @@ alias venv='source .venv/bin/activate'
 function aws-s3-total() {
     aws s3 ls --summarize --human-readable --recursive $1 | grep 'Total'
 }
+
+alias ssh-init='ssh-add ~/.ssh/id_rsa'
