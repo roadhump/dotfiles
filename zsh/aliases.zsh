@@ -1,8 +1,8 @@
-alias reload!=src
-alias r!='src'
+alias reload!='omz reload'
+alias r!='omz reload'
 alias c='clear'
 
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="more ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias sourcetree='open -a SourceTree'
 alias chrome="open -a google\ chrome"
@@ -63,7 +63,7 @@ git_super_status() {
         if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
             STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
         fi
-        STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+        STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX%{${reset_color}%}"
         echo "$STATUS"
     fi
 }
@@ -85,12 +85,80 @@ alias de=source_env
 alias lh='ls -lAth'
 alias lah='ls -lAth'
 
-alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
-
 alias venv='source .venv/bin/activate'
 
 function aws-s3-total() {
     aws s3 ls --summarize --human-readable --recursive $1 | grep 'Total'
 }
 
-alias ssh-init='ssh-add ~/.ssh/id_rsa'
+alias ssh-init='ssh-add ~/.ssh/id_ed25519'
+alias xcode-update='xcode-select --install'
+
+alias python=python3
+
+function shared_resources(){
+
+PROFILE=
+ACCOUNT_ID=
+usage() {
+    cat <<EOF
+    usage: $0 optional params
+    login to all shared resources using a single command.
+    OPTIONS:
+    -h      HELP
+    -p      AWS Profile as you set under  ~/.aws/config (Optional - Default DevelopersShared )
+    -a      AWS Account ID (Optional - Default 974360507615)
+EOF
+}
+
+    while getopts "hr:a:p:" opt; do
+        case $opt in
+            h) usage; return;;
+            a) ACCOUNT_ID=$OPTARG ;;
+            p) PROFILE=$OPTARG ;;
+        esac
+    done
+
+if [[ -z $PROFILE ]]; then
+    echo "Profile not supplied, set default DevelopersShared"
+    PROFILE="DevelopersShared"
+fi
+
+if [[ -z $ACCOUNT_ID ]]; then
+    echo "ACCOUNT ID not supplied, set default 974360507615"
+    ACCOUNT_ID="974360507615"
+fi
+
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+BGreen='\033[1;32m'
+
+
+echo -e "Before proceeding, ensure the following:\n"
+echo -e "1. You have set up a working AWS MFA (Multi-Factor Authentication)."
+echo -e "2. Your user is part of the DevelopersShared group on Deel SSO (https://deel-sso.awsapps.com/start/).\n   ${RED}If not, please raise a ticket under #ask-it.${NC}\n"
+
+# AWS SSO Login
+if ! aws sso login --profile $PROFILE; then
+  echo -e "${RED}AWS SSO Login $ACCOUNT_ID-$PROFILE failed${NC}"
+  return
+fi
+
+# Get CODEARTIFACT_AUTH_TOKEN
+if ! CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain npm --domain-owner $ACCOUNT_ID --profile $PROFILE --region eu-west-1 --query authorizationToken --output text); then
+  echo -e "${RED}Failed to retrieve token${NC}"
+  return
+fi
+
+echo -e "${BGreen}Token pulled successfully${NC}"
+echo -e "Connecting to Shared ECR"
+
+# Docker Login to Shared ECR
+if ! aws ecr get-login-password --region eu-west-1 --profile $PROFILE | docker login --username AWS --password-stdin "$ACCOUNT_ID.dkr.ecr.eu-west-1.amazonaws.com"; then
+  echo -e "${RED}ECR Login failed${NC}"
+  return
+fi
+
+echo -e "${BGreen}ECR Login successful${NC}"
+}
